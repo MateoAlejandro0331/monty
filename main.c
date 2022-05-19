@@ -1,43 +1,48 @@
 #include "monty.h"
-FILE *demo = NULL;
+global_variable global = {NULL, NULL};
 /**
- * @brief 
- * 
+ * main - main function
+ * @argc: count arguments
+ * @argv: string argument
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
 	char str[256], *token;
-	stack_t *head = NULL;
 	void (*k)(stack_t **, unsigned int);
-	unsigned int line_number = 0;
+	unsigned int line_number = 1;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	demo = fopen(argv[1], "r");
-	if (!demo)
+	global.demo = fopen(argv[1], "r");
+	if (!global.demo)
 	{
-		fprintf(stderr,"Error: Can't open file %s", argv[1]);
-		fclose(demo);
+		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fclose(global.demo);
 		exit(EXIT_FAILURE);
 	}
-	while(fgets(str, 256, demo))
+	while (fgets(str, 256, global.demo))
 	{
 		line_number++;
 		if (str[0] == 10)
 			continue;
 		token = strtok(str, " \t\n\r");
+		if (token == NULL)
+			continue;
 		k = get_op_func(token);
 		if (!k)
 		{
-			fprintf(stderr,"L%d: unknown instruction %s\n", line_number, token);
-			fclose(demo);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+			free_list(global.head);
+			fclose(global.demo);
 			exit(EXIT_FAILURE);
 		}
-		k(&head, line_number);
+		k(&global.head, line_number);
 	}
-	fclose(demo);
-	return 0;
-}   
+	free_list(global.head);
+	fclose(global.demo);
+	return (0);
+}

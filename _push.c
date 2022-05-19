@@ -2,11 +2,11 @@
 
 /**
  * _push - Push function
- *
  * @head: Stack Head
  * @line_number: # line
+ * Return: nothing
  */
-void _push(stack_t **head, unsigned int line_number) 
+void _push(stack_t **head, unsigned int line_number)
 {
 	char *token = NULL;
 	int data = 0;
