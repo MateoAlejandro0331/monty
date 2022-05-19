@@ -44,8 +44,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
- * global_variables 
- * 
+ * struct global_variables - struct to manage the global variables
+ * @demo: variable to store the file
+ * @head: pointer to the head of the list
+ * Description: variable
  */
 typedef struct global_variables
 {
