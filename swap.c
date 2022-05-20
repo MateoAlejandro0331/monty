@@ -5,10 +5,11 @@
  * @head: double pointer to the first node
  */
 
-void swap(stack_t **head, unsigned int line_number)
+void _swap(stack_t **head, unsigned int line_number)
 {
-	stack_t *current = *head;
-	stack_t *tmp;
+	int temp;
+
+	printf("entra al swap pasa");
 
 	(void)(line_number);
 	if (!(*head) || !((*head)->next))
@@ -18,13 +19,14 @@ void swap(stack_t **head, unsigned int line_number)
 		fclose(global.demo);
 		exit(EXIT_FAILURE);
 	}
-	tmp = current->next;
-	current->prev = current->next;
-	current->next = tmp->next;
-	tmp->prev = NULL;
-	current->next = tmp->next;
-	if (tmp->next)
-		tmp->next->prev = current;
-	tmp->next = current;
-	current = current->prev;
+	temp = (*head)->n;
+	if ((*head)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		free_list(*head);
+		exit(EXIT_FAILURE);
+	}
+
+	(*head)->n = (*head)->next->n;
+	(*head)->next->n = temp;	
 }
