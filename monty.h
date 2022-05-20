@@ -65,5 +65,6 @@ stack_t *add_dnodeint(stack_t **head, int n);
 void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
 int comparedigit(char *s, unsigned int line_number);
 void free_list(stack_t *head);
+void pint(stack_t **head, unsigned int line_number);
 
 #endif
