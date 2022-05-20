@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	char str[256], *token;
 	void (*k)(stack_t **, unsigned int);
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 
 	if (argc != 2)
 	{
