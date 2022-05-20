@@ -11,11 +11,8 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", pint},
-<<<<<<< HEAD
 		{"pop", pop},
-=======
 		{"swap", swap},
->>>>>>> 7c5ffc9788104629d2c34ccf4d830f77f63f76b2
 		{NULL, NULL}
 		};
 	int i = 0;
