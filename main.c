@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
 	if (!global.demo)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		fclose(global.demo);
 		exit(EXIT_FAILURE);
 	}
 	while (fgets(str, 256, global.demo))
