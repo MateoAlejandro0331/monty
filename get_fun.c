@@ -5,7 +5,6 @@
  * @s: string to compare
  * Return: funtion match
  */
-
 void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruc[] = {
