@@ -8,7 +8,7 @@ global_variable global = {NULL, NULL};
  */
 int main(int argc, char *argv[])
 {
-	char str[256], *token;
+	char str[6000], *token;
 	void (*k)(stack_t **, unsigned int);
 	unsigned int line_number = 0;
 
