@@ -66,5 +66,5 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number);
 int comparedigit(char *s, unsigned int line_number);
 void free_list(stack_t *head);
 void pint(stack_t **head, unsigned int line_number);
-void swap(stack_t **head, unsigned int line_number);
+void _swap(stack_t **head, unsigned int line_number);
 #endif
