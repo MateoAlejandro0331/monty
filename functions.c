@@ -48,6 +48,7 @@ int comparedigit(char *s, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; s[i]; i++)
+	{
 		if (s[i] >= 65 && s[i] <= 122)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -55,8 +56,9 @@ int comparedigit(char *s, unsigned int line_number)
 			fclose(global.demo);
 			exit(EXIT_FAILURE);
 		}
-		digit = atoi(s);
-		return (digit);
+	}
+	digit = atoi(s);
+	return (digit);
 }
 /**
  * free_list - free list
