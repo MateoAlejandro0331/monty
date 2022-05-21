@@ -1,4 +1,7 @@
 #include "monty.h"
+<<<<<<< HEAD
+
+=======
 /**
  * pop - delete head node
  * @head: pointer to the head
@@ -21,3 +24,4 @@ void pop(stack_t **head, unsigned int line_number)
 	free(current);
 
 }
+>>>>>>> 7e53529a4dc907b7283b324196397e513ab06c17
