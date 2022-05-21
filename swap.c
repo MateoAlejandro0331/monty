@@ -9,9 +9,6 @@ void _swap(stack_t **head, unsigned int line_number)
 {
 	int temp;
 
-	printf("entra al swap pasa");
-
-	(void)(line_number);
 	if (!(*head) || !((*head)->next))
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
@@ -26,7 +23,6 @@ void _swap(stack_t **head, unsigned int line_number)
 		free_list(*head);
 		exit(EXIT_FAILURE);
 	}
-
 	(*head)->n = (*head)->next->n;
 	(*head)->next->n = temp;	
 }
